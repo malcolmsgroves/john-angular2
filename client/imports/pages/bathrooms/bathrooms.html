@@ -17,11 +17,11 @@
 <ion-content class="bathrooms-page-content">
   <ion-list class="bathrooms">
     <ion-item-sliding *ngFor="let bathroom of bathrooms | async">
-      <button ion-item class="bathroom">
+      <button ion-item class="bathroom" (click)="showBathroom(bathroom)">
         <div class="bathroom-info">
           <h2 class="bathroom-title">{{bathroom.name}}</h2>
           <p class="bathroom-description">{{bathroom.description}}</p>
-          <span class="bathroom-timestamp">{{bathroom.createdAt }}</span>
+          <span class="bathroom-timestamp">{{bathroom.createdAt | amCalendar }}</span>
           <span class="bathroom-location">{{bathroom.lat}}, {{bathroom.lng}}</span>
         </div>
       </button>

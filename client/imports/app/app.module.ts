@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MomentModule } from 'angular2-moment';
 import { MyApp } from './app.component';
 
-import { BathroomsPage } from '../pages/bathrooms/bathrooms'
+import { BathroomsPage } from '../pages/bathrooms/bathrooms';
+import { BathroomPage } from '../pages/bathroom/bathroom';
 
 @NgModule({
   declarations: [
     MyApp,
-    BathroomsPage
+    BathroomsPage,
+    BathroomPage,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import { BathroomsPage } from '../pages/bathrooms/bathrooms'
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    BathroomsPage
+    BathroomsPage,
+    BathroomPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler }
