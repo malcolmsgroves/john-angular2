@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="whatsapp">
+    <ion-title>
+      Chats
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="add-bathroom-button">
+        <ion-icon name="bathroom-add"></ion-icon>
+      </button>
+      <button ion-button icon-only class="options-button">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bathrooms-page-content">
+  <ion-list class="bathrooms">
+    <ion-item-sliding *ngFor="let bathroom of bathrooms | async">
+      <button ion-item class="bathroom">
+        <div class="bathroom-info">
+          <h2 class="bathroom-title">{{bathroom.name}}</h2>
+          <p class="bathroom-description">{{bathroom.description}}</p>
+          <span class="bathroom-timestamp">{{bathroom.createdAt }}</span>
+          <span class="bathroom-location">{{bathroom.lat}}, {{bathroom.lng}}</span>
+        </div>
+      </button>
+      <ion-item-options class="bathroom-options">
+        <button ion-button color="danger" class="option option-remove" (click)="removeBathroom(bathroom)">Remove</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
