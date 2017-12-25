@@ -1,9 +1,16 @@
+import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
 import * as Moment from 'moment';
 import { Bathrooms } from '../imports/collections';
 
 Meteor.startup(() => {
   // code to run on server at startup
+
+  if (Meteor.settings) {
+    Object.assign(Accounts._options, Meteor.settings['accounts-phone']);
+    SMS.twilio = Meteor.settings['twilio'];
+  }
+
   if (Bathrooms.find({}).cursor.count() === 0) {
 
     Bathrooms.collection.insert({

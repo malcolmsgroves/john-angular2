@@ -21,3 +21,7 @@ angular2-compilers
 mys:fonts
 mobile-status-bar
 launch-screen
+accounts-base
+npm-bcrypt
+mys:accounts-phone
+check
